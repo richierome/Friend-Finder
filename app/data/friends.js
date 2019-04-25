@@ -1,7 +1,7 @@
 [
   {
-    "name":"Ahmed",
-    "photo":"https://m.media-amazon.com/images/M/MV5BMjAwNDU3MzcyOV5BMl5BanBnXkFtZTcwMjc0MTIxMw@@._V1_UY317_CR13,0,214,317_AL_.jpg",
+    "name":"Roberto",
+    "photo":"https://i.pinimg.com/originals/6b/f7/81/6bf7816116d328325ae3536515c26ead.png",
     "scores":[
         5,
         5,
@@ -9,10 +9,10 @@
         5,
         5,
         5,
-        2,
         5,
         4,
-        1
+        4,
+        4
       ]
   },
   {
@@ -32,19 +32,84 @@
       ]
   },
   {
-    "name":"jim",
-    "photo":"https://www.famousbirthdays.com/faces/vasquez-jacky-image.jpg",
+    "name":"Pee Wee Hreman",
+    "photo":"https://www.slocombtomatofestival.org/wp-content/uploads/2019/01/pee-wee-herman-birthday-card-2-new-123-best-pee-wee-herman-images-on-pinterest-of-pee-wee-herman-birthday-card-2.jpg.",
+    "scores":[
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2
+      ]
+  },
+  {
+    "name":"Shoshanna",
+    "photo":"https://static.tvtropes.org/pmwiki/pub/images/Shoshanna_Dreyfuss_6382.jpg",
+    "scores":[
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        2,
+        1
+      ]
+  },
+  {
+    "name":"Andy",
+    "photo":"https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/p-mortal-kombat-robin-shou.jpg",
+    "scores":[
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        3,
+        3,
+        3
+        
+      ]
+  },
+  {
+    "name":"Rouge",
+    "photo":"https://townsquare.media/site/622/files/2016/01/x-rogue.jpg?w=300&h=300&q=75",
     "scores":[
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+  },
+  {
+    "name":"Alyssa",
+    "photo":"https://d219s82bmpe0qh.cloudfront.net/wp-content/uploads/2018/10/09110423/H2rBIKj.jpg",
+    "scores":[
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        5,
+        5
       ]
   }
 ]  
