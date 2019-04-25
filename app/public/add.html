@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Friend Finder</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Survey Questions</h1>
+      <hr>
+    </div>
+    <div class="row">
+
+      <div class="col-12">
+
+        <div class="card">
+          <div class="card-header">
+            <h3><strong>Questions</strong></h3>
+          </div>
+          <div class="card-body">
+            <form method="POST" role="form">
+
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name">
+              </div>
+
+              <div class="form-group">
+                <label for="image">link to photo</label>
+                <input type="text" class="form-control" id="image">
+              </div>
+
+              <select class="custom-select" id="question1">
+                <option selected><strong>What is your favorite color?</strong></option>
+                <option value="1">Black</option>
+                <option value="2">Red</option>
+                <option value="3">Blue</option>
+                <option value="4">Yellow</option>
+                <option value="5">Grey</option>
+              </select>
+
+              <select class="custom-select" id="question2">
+                <option selected><strong>What is your favorite food?</strong></option>
+                <option value="1">Fish</option>
+                <option value="2">Red Meat</option>
+                <option value="3">Salad</option>
+                <option value="4">Sushi</option>
+                <option value="5">Pasta</option>
+              </select>
+              <select class="custom-select" id="question3">
+                <option selected><strong>What is favorite drink?</strong></option>
+                <option value="1">Gin & Tonic</option>
+                <option value="2">Beer</option>
+                <option value="3">Shot OF Tequila</option>
+                <option value="4">Rum</option>
+                <option value="5">Wine</option>
+              </select>
+              <select class="custom-select" id="question4">
+                <option selected><strong>What is your favorite City?</strong></option>
+                <option value="1">New YOrk</option>
+                <option value="2">LA</option>
+                <option value="3">Barcelona</option>
+                <option value="4">London</option>
+                <option value="5">Rome</option>
+              </select>
+              <select class="custom-select" id="question5">
+                <option selected><strong>What is your favorite Show?</strong></option>
+                <option value="1">Sopranos</option>
+                <option value="2">Simpsons</option>
+                <option value="3">90210</option>
+                <option value="4">X-Men</option>
+                <option value="5">The Flash</option>
+              </select>
+              <select class="custom-select" id="question6">
+                <option selected><strong>What is your favorite Car?</strong></option>
+                <option value="1">Pontiac</option>
+                <option value="2">Ford</option>
+                <option value="3">Honda</option>
+                <option value="4">Tesla</option>
+                <option value="5">BMW</option>
+              </select>
+              <select class="custom-select" id="question7">
+                <option selected><strong>What is your favorite Pet?</strong></option>
+                <option value="1">Cat</option>
+                <option value="2">Dog</option>
+                <option value="3">Brid</option>
+                <option value="4">Lizard</option>
+                <option value="5">Fish</option>
+              </select>
+              <select class="custom-select" id="question8">
+                <option selected><strong>What is your favorite type of Music?</strong></option>
+                <option value="1">Punk</option>
+                <option value="2">Metal</option>
+                <option value="3">Country</option>
+                <option value="4">Techno</option>
+                <option value="5">Rockabilly</option>
+              </select>
+              <select class="custom-select" id="question9">
+                <option selected><strong>What is your favorite Coffee Shop?</strong></option>
+                <option value="1">Instant Coffee</option>
+                <option value="2">Starbucks</option>
+                <option value="3">Coffee bean</option>
+                <option value="4">Drip</option>
+                <option value="5">Gas Station Coffee</option>
+              </select>
+              <select class="custom-select" id="question10">
+                <option selected><strong>What is your favorite Holliday?</strong></option>
+                <option value="1">New Years</option>
+                <option value="2">Christmas</option>
+                <option value="3">Thanksgiving</option>
+                <option value="4">4th of July</option>
+                <option value="5">Holloween</option>
+              </select>
+
+            </form>
+            <br>
+            <div class="text-right">
+              <button type="submit" class="btn btn-primary btn-md" id="add-btn"><span class="fa fa-fire"></span> Find Me A Friend</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    // Question: What does this code do?
+    $("#add-btn").on("click", function(event) {
+      event.preventDefault();
+      var newSingles = {
+        name: $("#name").val().trim(),
+        photo: $("#image").val().trim(),
+        scores: []
+      };
+
+
+      for (let i = 1; i < 11; i++) {
+        newSingles.scores.push($("#question" + i).val().trim());
+      }
+
+      // Question: What does this code do??
+      $.post("/api/friends", newSingles)
+        .then(function(data) {
+          console.log(data);
+          // alert("Found new Friend!");
+          // alert("You Match with  " + data["name"]);
+          $('#match-name').text(data.name);
+          $("#pic").attr('src', data.photo);
+          $('#matched').modal('show');
+
+        });
+    });
+  </script>
+  <div class="modal" tabindex="-1" role="dialog" id="matched">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">You matched with</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="match-name"></p>
+          <img src id="pic">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
