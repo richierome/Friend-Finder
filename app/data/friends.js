@@ -98,7 +98,7 @@
   },
   {
     "name":"Alyssa",
-    "photo":"https://d219s82bmpe0qh.cloudfront.net/wp-content/uploads/2018/10/09110423/H2rBIKj.jpg",
+    "photo":"https://marriedbiography.com/wp-content/uploads/2017/05/Alyssa-Milano.jpg",
     "scores":[
         3,
         3,
